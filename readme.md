@@ -12,7 +12,7 @@
 
 -- Description of Deployment --
 
-![alt tag](https://raw.github.com/awill1988/remote-audio-control/RemoteAudioDiagram-AW.jgp)
+![alt tag](https://github.com/awill1988/remote-audio-control/blob/master/RemoteAudioDiagram-AW.jpg)
 
 
 Server Side:
