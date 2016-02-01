@@ -1,8 +1,72 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 5vmin;
+  font: 5vmin "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 0vmin;
 }
 
 a {
   color: #00B7FF;
+}
+
+h1 {
+	font-size:6vmax;
+	padding:0vmin;
+	margin:0vmin;
+	float:right;
+	position:relative;
+}
+
+#container {
+	padding: 6vmin;
+	margin-left: -5vmin;
+	height:90%;
+}
+
+
+canvas[event=delay] {
+    height:25vmax;
+    width: 90vmin;
+}
+
+canvas[event=tilt] {
+    height:70vmax;
+    width: 90vmin;
+}
+
+canvas[type=comment] {
+    height:5vmin;
+    width: 20vmin;
+}
+
+
+@media screen and (orientation:landscape) {
+	#container {
+	padding-left: 6vmax;
+	margin-left: -5vmin;
+	}
+
+	body {
+	  font-size: 3vmax;
+	  padding: 0vmax;
+	}
+	h1 {
+		font-size:8vmax;
+	}
+
+	canvas[event=delay] {
+	    height:25vmax;
+	    width: 50vmin;
+	    display: inline;
+	}
+
+	canvas[event=tilt] {
+	    height:45vmin;
+	    width: 86vmax;
+	}
+
+
+	canvas[type=comment] {
+	    height:10%;
+	    width: 10%;
+	}
 }
