@@ -1,0 +1,12 @@
+doctype html
+html
+	head
+		title=	title
+		link(rel='stylesheet', href='/stylesheets/style.css')
+body
+	h1= title
+	form(id='_userdata',action='/',method='post')
+		p #{name}
+		input(type='text',name='initials')
+		p
+		input(type='submit',value='Join')
