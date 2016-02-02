@@ -7,6 +7,18 @@ body
 	h1= title
 	form(id='_userdata',action='/',method='post')
 		p #{name}
-		input(type='text',name='initials')
+		input(id='input-initials', type='text',name='initials',maxlength=3, placeholder="Enter Your Initials")
 		p
 		input(type='submit',value='Join')
+
+		script.
+			$( "#input-initials" ).change(function() {
+				if($( "#input-initials" ).val().length == 0)
+				{
+					$( "#input-initials" ).css('letter-spacing',10%)
+				}
+				else
+				{
+					$( "#input-initials" ).css('letter-spacing',0)
+				}
+			});
