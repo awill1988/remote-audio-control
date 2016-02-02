@@ -168,17 +168,18 @@ app.directive('nexusTilt', function () {
           nx.add('tilt',
               { name:attrs.id,
                 parent:scope})
+
           
           var obj = nx.widgets[attrs.id];
           var jqueryObj = $('#'+attrs.id);
 
           obj.text = attrs.label;
-
+          var id = socket.id;
           obj.on('*',function(data) {
-            console.log(data)
+            //console.log(data)
             socket.emit('user',
             {
-              socketid: '/#'+socket.id,
+              socketid: '/#'+id,
               event: attrs.event,
               arg: data
             })

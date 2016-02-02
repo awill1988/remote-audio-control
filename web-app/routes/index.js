@@ -25,7 +25,7 @@ router.post('/', function(req, res, next) {
 
   // Render the index.jade file of the angular app
 	res.write(templateFn({
-  		title: 'We\'re now live!',
+  		title: 'Interact',
   		initials: req.session.initials,
   		location: req.session.seat,
   		uci: req.session.uci,

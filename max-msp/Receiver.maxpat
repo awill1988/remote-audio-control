@@ -39,6 +39,18 @@
 		"boxes" : [ 			{
 				"box" : 				{
 					"comment" : "",
+					"id" : "obj-6",
+					"maxclass" : "outlet",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 147.0, 349.0, 30.0, 30.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"comment" : "",
 					"id" : "obj-3",
 					"maxclass" : "outlet",
 					"numinlets" : 1,
@@ -91,9 +103,9 @@
 					"id" : "obj-47",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 30.0, 309.25, 52.0, 22.0 ],
+					"numoutlets" : 4,
+					"outlettype" : [ "", "", "", "" ],
+					"patching_rect" : [ 30.0, 309.25, 136.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"filename" : "users.js",
 						"parameter_enable" : 0
@@ -318,7 +330,7 @@
 					"destination" : [ "obj-3", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 72.5, 345.0, 117.5, 345.0 ],
+					"midpoints" : [ 117.5, 345.0, 117.5, 345.0 ],
 					"source" : [ "obj-47", 2 ]
 				}
 
@@ -328,7 +340,7 @@
 					"destination" : [ "obj-31", 1 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 56.0, 344.0, 314.5, 344.0 ],
+					"midpoints" : [ 78.5, 344.0, 314.5, 344.0 ],
 					"source" : [ "obj-47", 1 ]
 				}
 
@@ -339,6 +351,15 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-47", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-6", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-47", 3 ]
 				}
 
 			}

@@ -16,7 +16,11 @@ html(lang='en',ng-app='app')
 
 		script.
 			//console.log(userInfo);
-			var socket = io(location.hostname+':'+'#{port}');
+			var socket = io(location.hostname+':'+'#{port}',
+				{
+				  transports: ['websocket'],
+				  'force new connection': true
+				});
 
 			//console.log('socket established');
 			socket.on('connect', function() {
@@ -44,8 +48,24 @@ html(lang='en',ng-app='app')
 				//window.location = currentStateURL;
 				
 			});
+
+			socket.on('disconnect', function() {
+				socketConnectTimeInterval = setInterval(function () {
+				      socket.socket.reconnect();
+
+				      if(socket.socket.connected) {
+				      		clearInterval(socketConnectTimeInterval);
+				      		var userInfo = {
+								initials: '#{initials}',
+								socketid: '/#'+socket.id
+							};
+							//console.log(userInfo);
+							socket.emit('add_user',userInfo);
+						}
+				}, 1000);
+			})
 	body
-		h1= title
+		h1= initials
 		div(id='container', ng-view)
 
 

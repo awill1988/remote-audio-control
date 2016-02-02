@@ -1,5 +1,5 @@
 autowatch = 1;
-outlets = 3;
+outlets = 4;
 
 // Create a new dictionary for users
 var users = new Dict('users');
@@ -7,7 +7,7 @@ var users = new Dict('users');
 var ids = new Dict('id');
 
 // Set size to zero
-var size = 0;
+_size = 0;
 
 /*	Add function */
 function add() {
@@ -25,18 +25,18 @@ function add() {
 	//	index
 	if(ids.get(dict.get('socketid')) == null) {
 		
-		users.set(size,dict);
-		ids.set(dict.get('socketid'),size);
+		users.set(_size,dict);
+		ids.set(dict.get('socketid'),_size);
 		
 		// Increment the size
-		size++;
+		_size++;
 	}
 	
 	
 	outlet(0,'bang');
 	// Print messages
 	outlet(1,dict.get('initials') + ' added.');
-	
+	outlet(3,_size);
 
 }
 
@@ -47,7 +47,7 @@ function remove(id) {
 	post('Attempting to remove: ', id,'\n');
 	
 	// More than one user
-	if(size > 1) {
+	if(_size > 1) {
 		// All the indeces
 		var keys = users.getkeys();
 		// Target index
@@ -56,7 +56,6 @@ function remove(id) {
 		var found = false;
 		// Loop control variable (LCV)
 		var i = 0;
-		
 		// Search for the id
 		while(!found && i < keys.length)
 		{
@@ -64,49 +63,43 @@ function remove(id) {
 			{
 				found = true;
 				target = parseInt(keys[i]);
-				// If it is not the last index
-				if(target < size-1) {	
+				
+				if(target != keys.length-1)
+				{
 					// For all the remaining indeces, decement their indeces
 					for(var j = target; j < keys.length-1; j++)
 					{
 						users.replace(j,users.get(j+1));
 						ids.set(users.get(j+1).get('socketid'),j);
 					}
-					// Remove the trailing entry (decrement the size)
-					users.remove(keys[keys.length-1]);
 					
 				}
 				
-				// It is the last index
-				else
-				{
-					users.remove(keys[i]);
-				}
-				
-				
-				
+				users.remove(keys[keys.length-1]);
+				ids.remove(id);
+				_size--;
 			}
 			// Increment LCV
 			i++;
 		}
 	}
 	// Only one user
-	else if(size > 0) {
+	else if(_size == 1) {
 		if(users.get('0').get('socketid') == id) {
-			users.remove('0');	
+			users.remove('0');
+			ids.remove(id);
+			_size--;
 		}
 	}
-	
 	outlet(0,'bang');
-	ids.remove(id);
-	if(size > 0)
-		size--;
+	outlet(3,_size);
 }
 
 // Erases all the users
 function bang() {
 	outlet(0,'clear');
-	size = 0;
+	_size = 0;
+	outlet(3,_size);
 }
 
 // Handles a user event
@@ -119,7 +112,9 @@ function user() {
 	var result = [messages[1],ids.get(messages[0]),messages[2]];
 	
 	if(messages.length > 3)
-		result.push(messages[3]);
+		for(i = 3;i<messages.length;i++)
+			result.push(messages[i]);
+	
 	
 	// DEBUG: Print raw message
 	outlet(1,'user: ', messages,'\n');
