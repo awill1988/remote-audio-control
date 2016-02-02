@@ -64,7 +64,7 @@ app.directive('nexusButton', function () {
               {
                 socketid: '/#'+socket.id,
                 event: attrs.event,
-                arg: -1
+                arg: 0
               })
               
           }
