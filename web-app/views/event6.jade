@@ -1,2 +1,43 @@
-h4= message
-// Spacialization/Volume
+div(style="text-align:center;width=:100%;margin-top:-5vmax")
+	h4 Spatialization
+	// Spacialization/Volume
+	table
+		tr
+			td Front Left
+			td Front Right
+	table(class='quad-table')
+		tr
+			td(style="text-align:right")
+				nexus-toggle-one(id='quad_front_left' event='quad' arg=0 class="quad")
+			td(style="text-align:left")
+				nexus-toggle-one(id='quad_front_right' event='quad' arg=1 class="quad")
+		tr
+			td(style="text-align:right")
+				nexus-toggle-one(id='quad_back_left' event='quad' arg=2 class="quad")
+			td(style="text-align:left")
+				nexus-toggle-one(id='quad_back_right' event='quad' arg=3 class="quad")
+	table
+		tr
+			td Back Left
+			td Back Right
+	table(class="vol-table")
+		tr
+			td(colspan=5)
+				h4 Volume
+		tr
+			td
+				nexus-toggle-one(id='volume_neutral' event='volume' arg=0 class="volume")
+			td
+				nexus-toggle-one(id='volume_yelp' event='volume' arg=1 class="volume")
+			td
+				nexus-toggle-one(id='volume_whisper' event='volume' arg=2 class="volume")
+			td
+				nexus-toggle-one(id='volume_long' event='volume' arg=3 class="volume")
+			td
+				nexus-toggle-one(id='volume_any' event='volume' arg=4 class="volume")
+		tr(style="font-size:2vmax")
+			td Neutral
+			td Yelps
+			td Whispers
+			td Long Pitch
+			td Any Sound

@@ -47,9 +47,21 @@ app.directive('nexusButton', function () {
         link: function(scope, elem, attrs) {
 
           var jqueryObj = $('#'+attrs.id);
-          nx.add(attrs.type,{name:attrs.id,parent:scope,showLabels:true})
+          nx.add(attrs.type,{name:attrs.id,parent:scope,showLabels:false})
           
           var obj = nx.widgets[attrs.id];
+          /*
+          if(attrs.blabel == "on")
+          {
+            obj.setImage("images/on_unpressed.svg")
+            obj.setTouchImage("images/on_pressed.svg")
+          }
+          if(attrs.blabel == 'off')
+          {
+            obj.setImage("images/off_unpressed.svg")
+            obj.setTouchImage("images/off_pressed.svg")
+          }
+          */
           var onButtonPress = function() {
               socket.emit('user',
               {
@@ -95,13 +107,15 @@ app.directive('nexusComment', function () {
         replace: true,
         template: '<canvas/>',
         link: function(scope, elem, attrs) {
-
+          console.log(attrs)
           var jqueryObj = $('#'+attrs.id);
-          nx.add(attrs.type,{name:attrs.id,parent:scope,w:attrs.width})
+          nx.add("comment",{name:attrs.id,parent:scope,w:0,h:0})
           
           var obj = nx.widgets[attrs.id];
-          obj.val = {text: attrs.text}
+          obj.val.text = attrs.text;
+          
           obj.setSize(15);
+          obj.draw()
           $('canvas[nx*="comment"]').remove();
           
           
@@ -123,7 +137,7 @@ app.directive('nexusToggle', function () {
           var obj = nx.widgets[attrs.id];
           var jqueryObj = $('#'+attrs.id);
 
-          obj.label = attrs.label;
+          //obj.label = attrs.label;
 
 
 
@@ -132,7 +146,7 @@ app.directive('nexusToggle', function () {
               {
                 socketid: '/#'+socket.id,
                 event: attrs.event,
-                arg: [ parseInt(attrs.arg), 1]
+                arg: [ parseInt(attrs.arg), parseInt(attrs.kind), 1]
               })
           };
 
@@ -141,7 +155,7 @@ app.directive('nexusToggle', function () {
               {
                 socketid: '/#'+socket.id,
                 event: attrs.event,
-                arg: [ parseInt(attrs.arg), 0]
+                arg: [ parseInt(attrs.arg), parseInt(attrs.kind), 0]
               })
           }
 
@@ -157,7 +171,110 @@ app.directive('nexusToggle', function () {
         }
     };
 });
+app.directive('nexusSpatial', function () {
+      return {
+        restrict: 'AE',
+        replace: true,
+        template: '<canvas/>',
+        link: function(scope, elem, attrs) {
+          
+          nx.add('toggle',
+              { name:attrs.id,
+                parent:scope})
+          
+          var obj = nx.widgets[attrs.id];
+          var jqueryObj = $('#'+attrs.id);
 
+          var onButtonPress = function() {
+              for(var w in nx.widgets)
+              {
+                if(w != attrs.id && w.search(attrs.event)==0) {
+                  nx.widgets[w].set({
+                    value:0
+                  })
+                  nx.widgets[w].draw()
+                }
+              }
+              socket.emit('user',
+              {
+                socketid: '/#'+socket.id,
+                event: attrs.event,
+                arg: parseInt(attrs.arg)
+              })
+          };
+
+          var onButtonRelease = function() {
+              //obj.set({value:1})
+              //obj.draw()
+          }
+
+          obj.on('*',function(data) {
+            if(data.value == 0)
+              onButtonRelease();
+            if(data.value == 1)
+              onButtonPress();
+          });
+
+          $('canvas[nx*="toggle"]').remove();
+          
+        }
+    };
+});
+
+app.directive('nexusToggleOne', function () {
+      return {
+        restrict: 'AE',
+        replace: true,
+        template: '<canvas/>',
+        link: function(scope, elem, attrs) {
+          
+          nx.add('toggle',
+              { name:attrs.id,
+                parent:scope})
+          
+          var obj = nx.widgets[attrs.id];
+          var jqueryObj = $('#'+attrs.id);
+
+          //obj.label = attrs.label;
+
+
+          var patt = /volume/i;
+
+          var onButtonPress = function() {
+              for(var w in nx.widgets)
+              {
+                if(w != attrs.id && w.search(attrs.event)==0) {
+                  nx.widgets[w].set({
+                    value:0
+                  })
+                  nx.widgets[w].draw()
+                }
+              }
+              socket.emit('user',
+              {
+                socketid: '/#'+socket.id,
+                event: attrs.event,
+                arg: parseInt(attrs.arg)
+              })
+          };
+
+          var onButtonRelease = function() {
+              obj.set({value:1})
+              obj.draw()
+          }
+
+          obj.on('*',function(data) {
+            if(data.value == 0)
+              onButtonRelease();
+            if(data.value == 1)
+              onButtonPress();
+          });
+
+          $('canvas[nx*="toggle"]').remove();
+          
+        }
+    };
+});
 app.directive('nexusTilt', function () {
       return {
         restrict: 'AE',

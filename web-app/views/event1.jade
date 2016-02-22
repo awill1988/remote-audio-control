@@ -1,7 +1,7 @@
-h4= message
 // Delay Event
-div(id='delay-event')
-	nexus-button(id="delayOn" type="button" view=1 event="delay" arg=1 label='on' width="150" height="150")
-	nexus-comment(id='delay-comment-on' type="comment" text="on" event="delay")
-	nexus-button(id="delayOff" type="button" view=1 event="delay" arg=-1 label='off' width="150" height="150")
-	nexus-comment(id='delay-comment-off' type="comment" text="off" event="delay")
+div(id='delay-event', style="text-align:center;width:100%")
+	h4 Delay
+	nexus-button(id="delayOn" type="button" view=1 event="delay" arg=1 style="width:25vmax;height:25vmax")
+	p(style="font-size:4vmax") On
+	nexus-button(id="delayOff" type="button" view=1 event="delay" arg=-1 style="width:25vmax;height:25vmax")
+	p(style="font-size:4vmax") Off

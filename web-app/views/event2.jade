@@ -1,6 +1,7 @@
-h4= message
-// Note Length Event
-div
-	nexus-button(id="noteLengthLong" type="button" view=2 event='length' arg=1 label='long' width='100')
-div
-	nexus-button(id="noteLengthShort" type="button" view=2 event='length' arg=-1 label='short' width='100')
+// Note Length
+div(id='length-event', style="text-align:center")
+	h4 Note Length
+	nexus-button(id="noteLengthShort" type="button" view=2 event="length" arg=-1 style="width:25vmax;height:25vmax")
+	p(style="font-size:4vmax") Short
+	nexus-button(id="noteLengthLong" type="button" view=2 event="length" arg=1 style="width:25vmax;height:25vmax")
+	p(style="font-size:4vmax") Long
