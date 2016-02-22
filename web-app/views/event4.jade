@@ -13,53 +13,53 @@ table(class = "combo")
 			table
 				tr
 					td 
-						nexus-toggle(id='gtr_high' event='pitch' arg=0 kind=2 class="instrument")
+						nexus-toggle-instrument(id='gtr_pitch_high' event='gtr_pitch' arg=0 kind=2 class="instrument")
 						p High
 					td
-						nexus-toggle(id='prep_high' event='pitch' arg=1 kind=2 class="instrument")
+						nexus-toggle-instrument(id='prep_pitch_high' event='prep_pitch' arg=1 kind=2 class="instrument")
 						p High
 					td
-						nexus-toggle(id='bass_high' event='pitch' arg=2 kind=2 class="instrument")
+						nexus-toggle-instrument(id='bass_pitch_high' event='bass_pitch' arg=2 kind=2 class="instrument")
 						p High
 				tr
 					td
-						nexus-toggle(id='gtr_med_high' event='pitch' arg=0 kind=1 class="instrument")
+						nexus-toggle-instrument(id='gtr_pitch_med_high' event='gtr_pitch' arg=0 kind=1 class="instrument")
 						p Medium High
 					td
-						nexus-toggle(id='prep_med_high' event='pitch' arg=1 kind=1 class="instrument")
+						nexus-toggle-instrument(id='prep_pitch_med_high' event='prep_pitch' arg=1 kind=1 class="instrument")
 						p Medium High
 					td
-						nexus-toggle(id='bass_med_high' event='pitch' arg=2 kind=1 class="instrument")
+						nexus-toggle-instrument(id='bass_pitch_med_high' event='bass_pitch' arg=2 kind=1 class="instrument")
 						p Medium High
 				tr
 					td
-						nexus-toggle(id='gtr_med' event='pitch' arg=0 kind=0 class="instrument")
-						p Medium
+						nexus-toggle-instrument(id='gtr_pitch_neutral' event='gtr_pitch' arg=0 kind=0 class="instrument")
+						p Neutral
 					td
-						nexus-toggle(id='prep_med' event='pitch' arg=1 kind=0 class="instrument")
-						p Medium
+						nexus-toggle-instrument(id='prep_pitch_neutral' event='prep_pitch' arg=1 kind=0 class="instrument")
+						p Neutral
 					td
-						nexus-toggle(id='bass_med' event='pitch' arg=2 kind=0 class="instrument")
-						p Medium
+						nexus-toggle-instrument(id='bass_pitch_neutral' event='bass_pitch' arg=2 kind=0 class="instrument")
+						p Neutral
 				tr
 					td
-						nexus-toggle(id='gtr_med_low' event='pitch' arg=0 kind=-1 class="instrument")
+						nexus-toggle-instrument(id='gtr_pitch_med_low' event='gtr_pitch' arg=0 kind=-1 class="instrument")
 						p Medium Low
 					td
-						nexus-toggle(id='prep_med_low' event='pitch' arg=1 kind=-1 class="instrument")
+						nexus-toggle-instrument(id='prep_pitch_med_low' event='prep_pitch' arg=1 kind=-1 class="instrument")
 						p Medium Low
 					td
-						nexus-toggle(id='bass_med_low' event='pitch' arg=2 kind=-1 class="instrument")
+						nexus-toggle-instrument(id='bass_pitch_med_low' event='bass_pitch' arg=2 kind=-1 class="instrument")
 						p Medium Low
 				tr
 					td
-						nexus-toggle(id='gtr_low' event='pitch' arg=0 kind=-2 class="instrument")
+						nexus-toggle-instrument(id='gtr_pitch_low' event='gtr_pitch' arg=0 kind=-2 class="instrument")
 						p Low
 					td
-						nexus-toggle(id='prep_low' event='pitch' arg=1 kind=-2 class="instrument")
+						nexus-toggle-instrument(id='prep_pitch_low' event='prep_pitch' arg=1 kind=-2 class="instrument")
 						p Low
 					td
-						nexus-toggle(id='bass_low' event='pitch' arg=2 kind=-2 class="instrument")
+						nexus-toggle-instrument(id='bass_pitch_low' event='bass_pitch' arg=2 kind=-2 class="instrument")
 						p Low
 				tr(style="vertical-alignment:bottom")
 					td
@@ -72,7 +72,7 @@ table(class = "combo")
 	tr
 		td
 			h4 Note Length
-			nexus-button(id="noteLengthShort" type="button" view=2 event="length" arg=-1 style="width:5vmax;height:5vmax")
+			nexus-button(id="noteLengthShort" type="button" view=2 event="length" arg=1 style="width:5vmax;height:5vmax")
 			p Short
-			nexus-button(id="noteLengthLong" type="button" view=2 event="length" arg=1 style="width:5vmax;height:5vmax")
+			nexus-button(id="noteLengthLong" type="button" view=2 event="length" arg=-1 style="width:5vmax;height:5vmax")
 			p Long

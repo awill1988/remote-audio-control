@@ -38,9 +38,10 @@ html(lang='en',ng-app='app')
 
 				var currentStateURL = '#' + state.args[0];
 				window.location = currentStateURL;
-
+				nx.colorize("#63e616")
 				for(var n in nx.widgets)
 				{
+					
 					nx.widgets[n].init();
 					nx.widgets[n].draw();
 				}

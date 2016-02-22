@@ -171,7 +171,7 @@ app.directive('nexusToggle', function () {
         }
     };
 });
-app.directive('nexusSpatial', function () {
+app.directive('nexusToggleInstrument', function () {
       return {
         restrict: 'AE',
         replace: true,
@@ -185,7 +185,20 @@ app.directive('nexusSpatial', function () {
           var obj = nx.widgets[attrs.id];
           var jqueryObj = $('#'+attrs.id);
 
+          //obj.label = attrs.label;
+
+          if(attrs.id.search("neutral")>0)
+          {
+            console.log(attrs.id)
+              nx.widgets[attrs.id].set({
+                    value:1
+                  }) 
+              nx.widgets[attrs.id].draw()      
+          }
+          var patt = /volume/i;
+
           var onButtonPress = function() {
+
               for(var w in nx.widgets)
               {
                 if(w != attrs.id && w.search(attrs.event)==0) {
@@ -198,14 +211,14 @@ app.directive('nexusSpatial', function () {
               socket.emit('user',
               {
                 socketid: '/#'+socket.id,
-                event: attrs.event,
-                arg: parseInt(attrs.arg)
+                event: "pitch",
+                arg: [ parseInt(attrs.arg), parseInt(attrs.kind)]
               })
           };
 
           var onButtonRelease = function() {
-              //obj.set({value:1})
-              //obj.draw()
+              obj.set({value:1})
+              obj.draw()
           }
 
           obj.on('*',function(data) {
@@ -220,7 +233,6 @@ app.directive('nexusSpatial', function () {
         }
     };
 });
-
 app.directive('nexusToggleOne', function () {
       return {
         restrict: 'AE',
@@ -231,6 +243,17 @@ app.directive('nexusToggleOne', function () {
           nx.add('toggle',
               { name:attrs.id,
                 parent:scope})
+
+
+
+          if(attrs.id.search("neutral")>0)
+          {
+            console.log(attrs.id)
+              nx.widgets[attrs.id].set({
+                    value:1
+                  }) 
+              nx.widgets[attrs.id].draw()      
+          }
           
           var obj = nx.widgets[attrs.id];
           var jqueryObj = $('#'+attrs.id);
@@ -259,8 +282,21 @@ app.directive('nexusToggleOne', function () {
           };
 
           var onButtonRelease = function() {
-              obj.set({value:1})
-              obj.draw()
+              
+              if(attrs.event == 'quad' || attrs.event =='c_quad')
+              {
+                socket.emit('user',
+                {
+                  socketid: '/#'+socket.id,
+                  event: attrs.event,
+                  arg: 0
+                })
+              }
+              else
+              {
+                obj.set({value:1})
+                obj.draw()
+              }
           }
 
           obj.on('*',function(data) {
@@ -275,6 +311,7 @@ app.directive('nexusToggleOne', function () {
         }
     };
 });
+
 app.directive('nexusTilt', function () {
       return {
         restrict: 'AE',
@@ -293,12 +330,13 @@ app.directive('nexusTilt', function () {
           obj.text = attrs.label;
           var id = socket.id;
           obj.on('*',function(data) {
+            var xy = [data.x, data.y]
             //console.log(data)
             socket.emit('user',
             {
               socketid: '/#'+id,
               event: attrs.event,
-              arg: data
+              arg: xy
             })
           });
 
