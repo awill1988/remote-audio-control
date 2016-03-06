@@ -1,7 +1,7 @@
 div(style="text-align:center")
 	h4 Pitch
 	// Pitch Event
-	table
+	table(class="pitch")
 		tr
 			td 
 				nexus-toggle-instrument(id='gtr_pitch_high' event='gtr_pitch' arg=0 kind=2 class="instrument")
@@ -22,16 +22,7 @@ div(style="text-align:center")
 			td
 				nexus-toggle-instrument(id='bass_pitch_med_high' event='bass_pitch' arg=2 kind=1 class="instrument")
 				p Medium High
-		tr
-			td
-				nexus-toggle-instrument(id='gtr_pitch_neutral' event='gtr_pitch' arg=0 kind=0 class="instrument")
-				p Neutral
-			td
-				nexus-toggle-instrument(id='prep_pitch_neutral' event='prep_pitch' arg=1 kind=0 class="instrument")
-				p Neutral
-			td
-				nexus-toggle-instrument(id='bass_pitch_neutral' event='bass_pitch' arg=2 kind=0 class="instrument")
-				p Neutral
+		
 		tr
 			td
 				nexus-toggle-instrument(id='gtr_pitch_med_low' event='gtr_pitch' arg=0 kind=-1 class="instrument")
@@ -52,6 +43,16 @@ div(style="text-align:center")
 			td
 				nexus-toggle-instrument(id='bass_pitch_low' event='bass_pitch' arg=2 kind=-2 class="instrument")
 				p Low
+		tr
+			td
+				nexus-toggle-instrument(id='gtr_pitch_neutral' event='gtr_pitch' arg=0 kind=0 class="instrument")
+				p Neutral
+			td
+				nexus-toggle-instrument(id='prep_pitch_neutral' event='prep_pitch' arg=1 kind=0 class="instrument")
+				p Neutral
+			td
+				nexus-toggle-instrument(id='bass_pitch_neutral' event='bass_pitch' arg=2 kind=0 class="instrument")
+				p Neutral
 		tr(style="vertical-alignment:bottom")
 			td
 				h3(style="font-size:3vmin") Gtr.

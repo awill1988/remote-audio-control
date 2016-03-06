@@ -2,13 +2,13 @@ table(class = "combo")
 	tr
 		td
 			//Delay
-			h4 Delay
-			nexus-button(id="delayOn" type="button" view=1 event="delay" arg=1 style="width:5vmax;height:5vmax")
+			h4(style="font-size:3vmin") Delay
+			nexus-button(id="delayOn" type="button" view=1 event="delay" arg=1 style="width:7vmax;height:7vmax")
 			p On
-			nexus-button(id="delayOff" type="button" view=1 event="delay" arg=-1 style="width:5vmax;height:5vmax")
+			nexus-button(id="delayOff" type="button" view=1 event="delay" arg=-1 style="width:7vmax;height:7vmax")
 			p Off
 		td(rowspan=2)
-			h4 Pitch
+			h4(style="font-size:3vmin") Pitch
 			// Pitch Event
 			table
 				tr
@@ -33,16 +33,6 @@ table(class = "combo")
 						p Medium High
 				tr
 					td
-						nexus-toggle-instrument(id='gtr_pitch_neutral' event='gtr_pitch' arg=0 kind=0 class="instrument")
-						p Neutral
-					td
-						nexus-toggle-instrument(id='prep_pitch_neutral' event='prep_pitch' arg=1 kind=0 class="instrument")
-						p Neutral
-					td
-						nexus-toggle-instrument(id='bass_pitch_neutral' event='bass_pitch' arg=2 kind=0 class="instrument")
-						p Neutral
-				tr
-					td
 						nexus-toggle-instrument(id='gtr_pitch_med_low' event='gtr_pitch' arg=0 kind=-1 class="instrument")
 						p Medium Low
 					td
@@ -61,6 +51,16 @@ table(class = "combo")
 					td
 						nexus-toggle-instrument(id='bass_pitch_low' event='bass_pitch' arg=2 kind=-2 class="instrument")
 						p Low
+				tr
+					td
+						nexus-toggle-instrument(id='gtr_pitch_neutral' event='gtr_pitch' arg=0 kind=0 class="instrument")
+						p Neutral
+					td
+						nexus-toggle-instrument(id='prep_pitch_neutral' event='prep_pitch' arg=1 kind=0 class="instrument")
+						p Neutral
+					td
+						nexus-toggle-instrument(id='bass_pitch_neutral' event='bass_pitch' arg=2 kind=0 class="instrument")
+						p Neutral
 				tr(style="vertical-alignment:bottom")
 					td
 						h3(style="font-size:3vmin") Gtr.
@@ -71,8 +71,8 @@ table(class = "combo")
 
 	tr
 		td
-			h4 Note Length
-			nexus-button(id="noteLengthShort" type="button" view=2 event="length" arg=1 style="width:5vmax;height:5vmax")
-			p Short
-			nexus-button(id="noteLengthLong" type="button" view=2 event="length" arg=-1 style="width:5vmax;height:5vmax")
+			h4(style="font-size:3vmin") Note Length
+			nexus-button(id="noteLengthShort" type="button" view=2 event="length" arg=1 style="width:7vmax;height:7vmax")
 			p Long
+			nexus-button(id="noteLengthLong" type="button" view=2 event="length" arg=-1 style="width:7vmax;height:7vmax")
+			p Short

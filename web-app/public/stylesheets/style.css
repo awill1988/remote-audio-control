@@ -1,30 +1,56 @@
 body {
-  padding: 5vmin;
   font: 5vmin "Lucida Grande", Helvetica, Arial, sans-serif;
-  padding: 0vmin;
+  width:95vmin;
+  height:95vmax;
+  text-align: center;
+  margin:0;
 }
 
+.pitch {
+	width:94vmin;
+
+}
+
+#input-initials {
+	margin-top: 10vmax;
+	height:10vmax;
+	width:80vmin;
+	font: 7vmin "Lucida Grande", Helvetica, Arial, sans-serif;
+	outline: 1px solid #333;
+}
+
+input[type=submit] {
+ 	padding:5px 15px; 
+    background:#ddd; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+	font: 7vmin "Lucida Grande", Helvetica, Arial, sans-serif;
+	height:10vmax;
+	width:80vmin;
+}
 a {
   color: #00B7FF;
 }
 
 h1 {
-	font-size:6vmax;
-	padding:0vmin;
-	margin:0vmin;
-	float:right;
-	position:relative;
+	font-size:3vmin;
+	right:4vmin;
+	top:3vmax;
+	position:fixed;
+
 }
 
 #container {
-	padding: 6vmin;
-	margin-left: -5vmin;
-	height:90%;
+	text-align: center;
+	margin-left: 3vmin;
+	margin-top:5vmax;
 }
+
 table {
-	width:100%;
-	text-align: center
 }
+
 
 .instrument {
 	width:7vmax;
@@ -32,16 +58,18 @@ table {
 }
 
 .quad {
-	width:15vmax;
-	height:15vmax;	
+	width:25vmin;
+	height:25vmin;	
+	text-align: center;
 }
 .quad-table tbody{
-	width:70%;
 }
 .quad-table td {
 	padding:0px;
 }
-
+.quad-table {
+	width: 90vmin;
+}
 .volume {
 	width:10vmin;
 	height:10vmin;	
@@ -50,31 +78,32 @@ table {
 	min-width:15vmin;
 	max-width:20vmin;
 }
-.last table {
-	/*border: 1px solid black;*/
+
+.vol-table {
+	width: 90vmin;
 }
+
+
 table td p {
 	font-size:2vmin;
 }
+
 td.instrument-comment {
-		width:2vmin;
-		font-size:1vmin;
+	width:2vmin;
+	font-size:1vmin;
 }
 
 .combo {
-	padding:0px;
-	margin-top:-5vmax;
 	text-align:center;
-	font-size:2vmin;
-	width:100%;
-	height:100%;
-	vertical-align: middle
+	font-size:3vmin;
+	width:90vmin;
+	margin-top: 1vmax;
 }
-.combo table {
-}
-canvas[event=delay] {
 
+.combo table {
+	width:70vmin;
 }
+
 
 canvas[event=tilt] {
     height:70vmax;
@@ -86,7 +115,22 @@ canvas[type=comment] {
     width: 20vmin;
 }
 
+canvas {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+th {
+	font-size: 3vmin;
+    padding-top: 2vmax;
+    padding-bottom:2vmax;
+}
 
 @media screen and (orientation:landscape) {
+
 
 }

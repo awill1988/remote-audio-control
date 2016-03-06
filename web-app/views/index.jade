@@ -1,24 +1,25 @@
 doctype html
 html
 	head
+		meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0")
 		title=	title
 		link(rel='stylesheet', href='/stylesheets/style.css')
+		script(type='text/javascript', src='javascripts/jquery.min.js')
 body
 	h1= title
 	form(id='_userdata',action='/',method='post')
-		p #{name}
 		input(id='input-initials', type='text',name='initials',maxlength=3, placeholder="Enter Your Initials")
 		p
 		input(type='submit',value='Join')
 
 		script.
 			$( "#input-initials" ).change(function() {
-				if($( "#input-initials" ).val().length == 0)
+				if($("#input-initials").val().length == 0)
 				{
-					$( "#input-initials" ).css('letter-spacing',10%)
+					$( "#input-initials" ).css('letter-spacing',"10%");
 				}
 				else
 				{
-					$( "#input-initials" ).css('letter-spacing',0)
+					$( "#input-initials" ).css('letter-spacing',"0");
 				}
 			});

@@ -1,128 +1,128 @@
-div(class="last" style="text-align:center;width=:100%;font-size:2vmin")
-	table
-		th(colspan=5) Tempo
-		tr
-			td Very Slow
-			td Slow
-			td Moderate
-			td Fast
-			td Very Fast
-		tr
-			td
-				nexus-toggle-one(id='temp_vslow' event='temp' arg=1 class="temp" style="width:5vmax;height:5vmax")
-			td
-				nexus-toggle-one(id='temp_slow' event='temp' arg=2 class="temp" style="width:5vmax;height:5vmax")
-			td
-				nexus-toggle-one(id='temp_mod' event='temp' arg=3 class="temp" style="width:5vmax;height:5vmax")
-			td
-				nexus-toggle-one(id='temp_fast' event='temp' arg=4 class="temp" style="width:5vmax;height:5vmax")
-			td
-				nexus-toggle-one(id='temp_vfast' event='temp' arg=5 class="temp" style="width:5vmax;height:5vmax")
-		tr
-			td(colspan=5)
-				p Neutral
-				nexus-toggle-one(id='temp_neutral' event='temp' arg=-0 style="width:100%;height:5vmax")
-		tr
-			td
-	table(style="border-top: 1px solid black")
-		tr
-			td(valign="top")
-				table(style="border-right: 1px solid black")
-					th Players
-					tr
-						td
-							table
-								tr
-									td
-										p Quiet
-										nexus-toggle-one(id='p_vol_quiet' event='p_vol' arg=-1 style="width:5vmax;height:5vmax")
-									td
-										p Neutral
-										nexus-toggle-one(id='p_vol_neutral' event='p_vol' arg=0 style="width:5vmax;height:5vmax")
-									td
-										p Loud
-										nexus-toggle-one(id='p_vol_loud' event='p_vol' arg=1 style="width:5vmax;height:5vmax")
-					tr
-						td
-							table
-								tr
-									td Guitar
-									td
-										nexus-toggle-one(id='p_enable_guitar' event='p_enable' arg=1 style="width:5vmax;height:5vmax")
-								tr
-									td Violin
-									td
-										nexus-toggle-one(id='p_enable_violin' event='p_enable' arg=2 style="width:5vmax;height:5vmax")
-								tr
-									td Bass Clarinet
-									td
-										nexus-toggle-one(id='p_enable_b_cl' event='p_enable' arg=3 style="width:5vmax;height:5vmax")
-								tr
-									td Sax
-									td
-										nexus-toggle-one(id='p_enable_sax' event='p_enable' arg=4 style="width:5vmax;height:5vmax")
-								tr
-									td Piano
-									td
-										nexus-toggle-one(id='p_enable_piano' event='p_enable' arg=5 style="width:5vmax;height:5vmax")
-								tr
-									td Bass
-									td
-										nexus-toggle-one(id='p_enable_bass' event='p_enable' arg=6 style="width:5vmax;height:5vmax")
-								tr
-									td Neutral
-									td
-										nexus-toggle-one(id='p_enable_neutral' event='p_enable' arg=0 style="width:5vmax;height:5vmax")
+table(style="width:100%")
+	th(colspan=5) Tempo
+	tr(style="font-size:3vmin;")
+		td Very Slow
+		td Slow
+		td Moderate
+		td Fast
+		td Very Fast
+	tr
+		td
+			nexus-toggle-one(id='temp_vslow' event='temp' arg=1 class="temp" style="width:5vmax;height:5vmax")
+		td
+			nexus-toggle-one(id='temp_slow' event='temp' arg=2 class="temp" style="width:5vmax;height:5vmax")
+		td
+			nexus-toggle-one(id='temp_mod' event='temp' arg=3 class="temp" style="width:5vmax;height:5vmax")
+		td
+			nexus-toggle-one(id='temp_fast' event='temp' arg=4 class="temp" style="width:5vmax;height:5vmax")
+		td
+			nexus-toggle-one(id='temp_vfast' event='temp' arg=5 class="temp" style="width:5vmax;height:5vmax")
+	tr
+		td(colspan=5)
+			p(style="font-size:3vmin;margin-top:0") Neutral
+			nexus-toggle-one(id='temp_neutral' event='temp' arg=-0 style="height:7vmin;width:90%;")
+	tr
+		td
+table(style="border-top: 1px solid black;font-size:3vmin;width:90vmin;")
+	tr
+		td(valign="top" style="border-right:1px solid black;width:50%;")
+			table(style="width:100%;margin-top:-3vmin")
+				th Players
+				tr
+					td
+						table(style="width:100%;")
+							tr
+								td
+									p Quiet
+									nexus-toggle-one(id='p_vol_quiet' event='p_vol' arg=-1 style="width:5vmax;height:5vmax")
+								td
+									p Neutral
+									nexus-toggle-one(id='p_vol_neutral' event='p_vol' arg=0 style="width:5vmax;height:5vmax")
+								td
+									p Loud
+									nexus-toggle-one(id='p_vol_loud' event='p_vol' arg=1 style="width:5vmax;height:5vmax")
+				tr
+					td(style="width:100%;text-align:center;")
+						table(style="margin-top:2vmin;text-align:center;width:90%;")
+							tr
+								td Guitar
+								td
+									nexus-toggle-one(id='p_enable_guitar' event='p_enable' arg=1 style="width:5vmax;height:5vmax")
+							tr
+								td Violin
+								td
+									nexus-toggle-one(id='p_enable_violin' event='p_enable' arg=2 style="width:5vmax;height:5vmax")
+							tr
+								td Bass Clarinet
+								td
+									nexus-toggle-one(id='p_enable_b_cl' event='p_enable' arg=3 style="width:5vmax;height:5vmax")
+							tr
+								td Sax
+								td
+									nexus-toggle-one(id='p_enable_sax' event='p_enable' arg=4 style="width:5vmax;height:5vmax")
+							tr
+								td Piano
+								td
+									nexus-toggle-one(id='p_enable_piano' event='p_enable' arg=5 style="width:5vmax;height:5vmax")
+							tr
+								td Bass
+								td
+									nexus-toggle-one(id='p_enable_bass' event='p_enable' arg=6 style="width:5vmax;height:5vmax")
+							tr
+								td Neutral
+								td
+									nexus-toggle-one(id='p_enable_neutral' event='p_enable' arg=0 style="width:5vmax;height:5vmax")
 
-			td(valign="top")
-				table
-					th(colspan=2) Computer
-					tr
-						td(colspan=2)
-							table
-								tr
-									td
-										p Quiet
-										nexus-toggle-one(id='c_vol_quiet' event='c_vol' arg=-1 style="width:5vmax;height:5vmax")
-									td
-										p Neutral
-										nexus-toggle-one(id='c_vol_neutral' event='c_vol' arg=0 style="width:5vmax;height:5vmax")
-									td
-										p Loud
-										nexus-toggle-one(id='c_vol_loud' event='c_vol' arg=1 style="width:5vmax;height:5vmax")
-								tr
-									td
-										p Off
-										nexus-toggle-one(id='c_enable_off' event='c_enable' arg=-1 style="width:5vmax;height:5vmax")
-									td
-										p N
-										nexus-toggle-one(id='c_enable_neutral' event='c_enable' arg=0 style="width:5vmax;height:5vmax")
-									td
-										p On
-										nexus-toggle-one(id='c_enable_on' event='c_enable' arg=1 style="width:5vmax;height:5vmax")
-								tr
-									td 
-										p Arhythmic
-										nexus-toggle-one(id='c_rhythm_off' event='c_rhythm' arg=-1 style="width:5vmax;height:5vmax")
-									td
-										p N
-										nexus-toggle-one(id='c_rhythm_neutral' event='c_rhythm' arg=0 style="width:5vmax;height:5vmax")
-									td
-										p Rhythmic
-										nexus-toggle-one(id='c_rhythm_on' event='c_rhythm' arg=1 style="width:5vmax;height:5vmax")
-					tr
-						td
-							// Spacialization/Volume
-							table(class='quad-table')
-								th(colspan=2) Spatialization
-								tr
-									td(style="text-align:right")
-										nexus-toggle-one(id='c_quad_front_left' event='c_quad' arg=1 style="width:8vmax;height:8vmax")
-									td(style="text-align:left")
-										nexus-toggle-one(id='c_quad_front_right' event='c_quad' arg=2 style="width:8vmax;height:8vmax")
-								tr
-									td(style="text-align:right")
-										nexus-toggle-one(id='c_quad_back_left' event='c_quad' arg=4 style="width:8vmax;height:8vmax")
-									td(style="text-align:left")
-										nexus-toggle-one(id='c_quad_back_right' event='c_quad' arg=3 style="width:8vmax;height:8vmax")
-									
+		td(valign="top")
+			table(style="width:100%;margin-top:-3vmin")
+				th(colspan=2) Computer
+				tr
+					td(colspan=2)
+						table(style="width:100%;font-size:5vmin;")
+							tr
+								td(style="border-right:1px solid black;")
+									p Quiet
+									nexus-toggle-one(id='c_vol_quiet' event='c_vol' arg=-1 style="width:5vmax;height:5vmax")
+								td(style="border-right:1px solid black")
+									p Stop
+									nexus-toggle-one(id='c_enable_off' event='c_enable' arg=-1 style="width:5vmax;height:5vmax")
+								td
+									p Arhythmic
+									nexus-toggle-one(id='c_rhythm_off' event='c_rhythm' arg=-1 style="width:5vmax;height:5vmax")
+							tr
+								td(style="border-right:1px solid black")
+									p Neutral
+									nexus-toggle-one(id='c_vol_neutral' event='c_vol' arg=0 style="width:5vmax;height:5vmax")
+								td(style="border-right:1px solid black")
+									p Neutral
+									nexus-toggle-one(id='c_enable_neutral' event='c_enable' arg=0 style="width:5vmax;height:5vmax")
+								td
+									p Neutral
+									nexus-toggle-one(id='c_rhythm_neutral' event='c_rhythm' arg=0 style="width:5vmax;height:5vmax")
+							tr
+								td(style="border-right:1px solid black")
+									p Loud
+									nexus-toggle-one(id='c_vol_loud' event='c_vol' arg=1 style="width:5vmax;height:5vmax")
+
+								td(style="border-right:1px solid black")
+									p Play
+									nexus-toggle-one(id='c_enable_on' event='c_enable' arg=1 style="width:5vmax;height:5vmax")
+								td
+									p Rhythmic
+									nexus-toggle-one(id='c_rhythm_on' event='c_rhythm' arg=1 style="width:5vmax;height:5vmax")
+				tr
+					td(style="width:100%;")
+						// Spacialization/Volume
+						table(class='quad-table' style="padding-top:2px;width:100%")
+							th(colspan=2) Spatialization
+							tr
+								td(style="text-align:right")
+									nexus-toggle-one(id='c_quad_front_left' event='c_quad' arg=1 style="width:7vmax;height:7vmax")
+								td(style="text-align:left")
+									nexus-toggle-one(id='c_quad_front_right' event='c_quad' arg=2 style="width:7vmax;height:7vmax")
+							tr
+								td(style="text-align:right")
+									nexus-toggle-one(id='c_quad_back_left' event='c_quad' arg=4 style="width:7vmax;height:7vmax")
+								td(style="text-align:left")
+									nexus-toggle-one(id='c_quad_back_right' event='c_quad' arg=3 style="width:7vmax;height:7vmax")
+								
