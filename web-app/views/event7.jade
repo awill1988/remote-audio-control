@@ -80,15 +80,16 @@ table(style="border-top: 1px solid black;font-size:3vmin;width:90vmin;")
 					td(colspan=2)
 						table(style="width:100%;font-size:5vmin;")
 							tr
-								td(style="border-right:1px solid black;")
-									p Quiet
-									nexus-toggle-one(id='c_vol_quiet' event='c_vol' arg=-1 style="width:5vmax;height:5vmax")
 								td(style="border-right:1px solid black")
-									p Stop
-									nexus-toggle-one(id='c_enable_off' event='c_enable' arg=-1 style="width:5vmax;height:5vmax")
+									p Loud
+									nexus-toggle-one(id='c_vol_loud' event='c_vol' arg=1 style="width:5vmax;height:5vmax")
+
+								td(style="border-right:1px solid black")
+									p Play
+									nexus-toggle-one(id='c_enable_on' event='c_enable' arg=1 style="width:5vmax;height:5vmax")
 								td
-									p Arhythmic
-									nexus-toggle-one(id='c_rhythm_off' event='c_rhythm' arg=-1 style="width:5vmax;height:5vmax")
+									p Rhythmic
+									nexus-toggle-one(id='c_rhythm_on' event='c_rhythm' arg=1 style="width:5vmax;height:5vmax")
 							tr
 								td(style="border-right:1px solid black")
 									p Neutral
@@ -100,16 +101,16 @@ table(style="border-top: 1px solid black;font-size:3vmin;width:90vmin;")
 									p Neutral
 									nexus-toggle-one(id='c_rhythm_neutral' event='c_rhythm' arg=0 style="width:5vmax;height:5vmax")
 							tr
+								td(style="border-right:1px solid black;")
+									p Quiet
+									nexus-toggle-one(id='c_vol_quiet' event='c_vol' arg=-1 style="width:5vmax;height:5vmax")
 								td(style="border-right:1px solid black")
-									p Loud
-									nexus-toggle-one(id='c_vol_loud' event='c_vol' arg=1 style="width:5vmax;height:5vmax")
-
-								td(style="border-right:1px solid black")
-									p Play
-									nexus-toggle-one(id='c_enable_on' event='c_enable' arg=1 style="width:5vmax;height:5vmax")
+									p Stop
+									nexus-toggle-one(id='c_enable_off' event='c_enable' arg=-1 style="width:5vmax;height:5vmax")
 								td
-									p Rhythmic
-									nexus-toggle-one(id='c_rhythm_on' event='c_rhythm' arg=1 style="width:5vmax;height:5vmax")
+									p Arhythmic
+									nexus-toggle-one(id='c_rhythm_off' event='c_rhythm' arg=-1 style="width:5vmax;height:5vmax")
+
 				tr
 					td(style="width:100%;")
 						// Spacialization/Volume
